@@ -1,0 +1,14 @@
+[project]
+name = "clickcount"
+version = "0.1.0"
+description = "Счётчик кликов"
+readme = "README.md"
+requires-python = "==3.12.8"
+dependencies = [
+    "textual>=3.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+]
