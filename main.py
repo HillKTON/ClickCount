@@ -1,7 +1,7 @@
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Vertical
-from textual.widgets import Button, Label, Digits
+from textual.widgets import Button, Digits
 
 
 class CountClickApp(App):
@@ -35,7 +35,7 @@ class CountClickApp(App):
         self.exit()
 
     def update(self) -> None:
-        lb: Label = self.query_one("#label_clicks")
+        lb: Digits = self.query_one("#label_clicks")
         lb.update(str(self.clicks))
 
 
