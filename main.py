@@ -1,7 +1,7 @@
 from textual import on
 from textual.app import App, ComposeResult
 from textual.containers import Vertical
-from textual.widgets import Button, Label
+from textual.widgets import Button, Label, Digits
 
 
 class CountClickApp(App):
@@ -13,7 +13,7 @@ class CountClickApp(App):
 
     def compose(self) -> ComposeResult:
         with Vertical():
-            yield Label(id="label_clicks")
+            yield Digits(id="label_clicks")
             yield Button("Нажать", id="button_click")
             yield Button("Очистить", id="button_clear")
             yield Button("Закрыть", id="button_exit")
