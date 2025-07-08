@@ -16,6 +16,7 @@ class CountClickApp(App):
             yield Label(id="label_clicks")
             yield Button("Нажать", id="button_click")
             yield Button("Очистить", id="button_clear")
+            yield Button("Закрыть", id="button_exit")
 
     def on_ready(self) -> None:
         self.update()
@@ -28,6 +29,10 @@ class CountClickApp(App):
     @on(Button.Pressed, "#button_clear")
     def clear_clicks(self, event: Button.Pressed) -> None:
         self.clicks = 0
+
+    @on(Button.Pressed, "#button_exit")
+    def bnt_exit(self, event: Button.Pressed) -> None:
+        self.exit()
 
     def update(self) -> None:
         lb: Label = self.query_one("#label_clicks")
